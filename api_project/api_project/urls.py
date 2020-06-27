@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api.views import PingView,ScheduleView
+import api.views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',api.views.home),
     path('task/',ScheduleView.as_view()),
     path('ping/',PingView.as_view()),
 ]
